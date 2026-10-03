@@ -6,7 +6,6 @@ Tujuan Program : Analisis dan klasifikasi sampel data telemetry CPU.
 Nama Pembuat   : Devon Falen Pasae (2409106055)
 """
 
-# Sampel data GPB-decoded yang nilainya disesuaikan tanpa leading zero (menggunakan angka 5)
 sampel_telemetry = [
     {"device": "router-cabang-055", "cpuUsage": 55},
     {"device": "switch-access-055", "cpuUsage": 5},
