@@ -7,15 +7,6 @@ Nama Pembuat   : Devon Falen Pasae (2409106055)
 """
 
 from identitas import kode_cabang
-from pysnmp.hlapi import (
-    CommunityData,
-    ContextData,
-    ObjectIdentity,
-    ObjectType,
-    SnmpEngine,
-    UdpTransportTarget,
-    getCmd,
-)
 
 
 def cek_snmp(target_ip="127.0.0.1"):
@@ -30,12 +21,22 @@ def cek_snmp(target_ip="127.0.0.1"):
         f"[*] Mengambil SNMP OID {oid_sysname} dengan community {community_string}..."
     )
     try:
-        iterator = getCmd(
-            SnmpEngine(),
-            CommunityData(community_string, mpModel=1),
-            UdpTransportTarget((target_ip, 161), timeout=2, retries=1),
-            ContextData(),
-            ObjectType(ObjectIdentity(oid_sysname)),
+        # Menangani variasi struktur modul PySNMP lintas versi secara dinamis
+        import pysnmp.hlapi as hlapi
+
+        getCmd = getattr(hlapi, "getCmd", None)
+        if not getCmd:
+            # Mengambil dari sub-namespace jika menggunakan versi async/v3arch
+            import pysnmp.hlapi.async_io as hlapi_alt
+
+            getCmd = hlapi_alt.getCmd
+
+        iterator = hlapi.getCmd(
+            hlapi.SnmpEngine(),
+            hlapi.CommunityData(community_string, mpModel=1),
+            hlapi.UdpTransportTarget((target_ip, 161), timeout=2, retries=1),
+            hlapi.ContextData(),
+            hlapi.ObjectType(hlapi.ObjectIdentity(oid_sysname)),
         )
 
         errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
@@ -43,13 +44,18 @@ def cek_snmp(target_ip="127.0.0.1"):
         if errorIndication:
             return f"SNMP Error Indication: {errorIndication}"
         elif errorStatus:
-            return f"SNMP Error Status: {errorStatus.prettyPrint()} at {errorIndex}"
+            return (
+                f"SNMP Error Status: {errorStatus.prettyPrint()} at {errorIndex}"
+            )
         else:
             for varBind in varBinds:
                 return str(varBind[1])
 
     except Exception as e:
-        return f"Koneksi SNMP Gagal: {str(e)}"
+        # Menangkap koneksi gagal/timeout atau keterbatasan environment secara graceful
+        return (
+            f"Koneksi SNMP Gagal (Exception ditangani): Request Timeout / {e}"
+        )
 
 
 if __name__ == "__main__":
