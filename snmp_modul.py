@@ -26,7 +26,6 @@ def cek_snmp(target_ip="127.0.0.1"):
 
         getCmd = getattr(hlapi, "getCmd", None)
         if not getCmd:
-            # Mengambil dari sub-namespace jika menggunakan versi async/v3arch
             import pysnmp.hlapi.async_io as hlapi_alt
 
             getCmd = hlapi_alt.getCmd
