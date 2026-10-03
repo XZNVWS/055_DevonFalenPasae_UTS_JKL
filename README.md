@@ -22,9 +22,7 @@ Proyek ini merupakan sistem otomatisasi dan pemantauan jaringan modular berbasis
 
 ## Cara Menjalankan Program
 
-1. Prasyarat (Prerequisites)
-Pastikan Python versi 3.x dan lingkungan virtual (virtual environment) sudah aktif serta pustaka yang dibutuhkan telah terinstal:
-
+1. Pastikan Python versi 3.x dan lingkungan virtual (virtual environment) sudah aktif serta pustaka yang dibutuhkan telah terinstal:
 ```python
 # Aktifkan Virtual Environment (Windows PowerShell)
 .\venv\Scripts\Activate.ps1
@@ -32,3 +30,18 @@ Pastikan Python versi 3.x dan lingkungan virtual (virtual environment) sudah akt
 # Instalasi pustaka yang dibutuhkan (jika belum)
 pip install paramiko pysnmp
 ```
+
+2. Jalankan file main.py melalui terminal untuk melihat eksekusi integrasi dari seluruh modul
+```python
+python main.py
+```
+
+3. Fitur Utama & Modul
+a. Modul SSH (ssh_modul.py): Mengelola koneksi remote berbasis Paramiko lengkap dengan exception handling untuk menangani timeout atau gagal otentikasi.
+
+b. Modul SNMP (snmp_modul.py): Melakukan query OID standar (sysName) untuk pemantauan nama perangkat secara otomatis.
+
+c. Modul NETCONF (netconf_modul.py): Membentuk struktur XML RPC (Messages, Operations, Content) untuk aplikasi konfigurasi VLAN.
+
+d. Modul Telemetry (telemetry_modul.py): Mengolah parameter penggunaan CPU ke dalam tingkatan status (NORMAL, WASPADA, KRITIS).
+
