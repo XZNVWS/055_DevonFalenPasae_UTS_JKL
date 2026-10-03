@@ -38,6 +38,7 @@ python main.py
 
 
 ## Fitur dan Modul
+```plaintext
 a. Modul SSH (ssh_modul.py): Mengelola koneksi remote berbasis Paramiko lengkap dengan exception handling untuk menangani timeout atau gagal otentikasi.
 
 b. Modul SNMP (snmp_modul.py): Melakukan query OID standar (sysName) untuk pemantauan nama perangkat secara otomatis.
@@ -45,4 +46,4 @@ b. Modul SNMP (snmp_modul.py): Melakukan query OID standar (sysName) untuk peman
 c. Modul NETCONF (netconf_modul.py): Membentuk struktur XML RPC (Messages, Operations, Content) untuk aplikasi konfigurasi VLAN.
 
 d. Modul Telemetry (telemetry_modul.py): Mengolah parameter penggunaan CPU ke dalam tingkatan status (NORMAL, WASPADA, KRITIS).
-
+```
