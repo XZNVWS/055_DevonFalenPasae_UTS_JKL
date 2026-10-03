@@ -4,6 +4,7 @@ NIM   : 2409106055
 ```
 
 
+
 # Network Automation & Monitoring Cabang Virtual
 
 Proyek ini merupakan sistem otomatisasi dan pemantauan jaringan modular berbasis Python. Sistem ini dirancang untuk menangani tugas-tugas manajemen jaringan seperti akses remote via SSH, monitoring SNMP, pembuatan payload NETCONF, serta pengolahan telemetry performa CPU perangkat.
@@ -26,6 +27,7 @@ Proyek ini merupakan sistem otomatisasi dan pemantauan jaringan modular berbasis
 └── README.md          # Dokumentasi proyek
 ```
 
+ 
 ## B. Cara Menjalankan Program
 
 1. Pastikan Python versi 3.x dan lingkungan virtual (virtual environment) sudah aktif serta pustaka yang dibutuhkan telah terinstal:
