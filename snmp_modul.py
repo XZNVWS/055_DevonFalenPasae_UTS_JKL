@@ -51,7 +51,6 @@ def cek_snmp(target_ip="127.0.0.1"):
                 return str(varBind[1])
 
     except Exception as e:
-        # Menangkap koneksi gagal/timeout atau keterbatasan environment secara graceful
         return (
             f"Koneksi SNMP Gagal (Exception ditangani): Request Timeout / {e}"
         )
