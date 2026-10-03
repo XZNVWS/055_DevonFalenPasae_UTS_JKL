@@ -1,3 +1,9 @@
+```plaintext
+Nama  : Devon Falen Pasae
+NIM   : 2409106055
+```
+
+
 # Network Automation & Monitoring Cabang Virtual
 
 Proyek ini merupakan sistem otomatisasi dan pemantauan jaringan modular berbasis Python. Sistem ini dirancang untuk menangani tugas-tugas manajemen jaringan seperti akses remote via SSH, monitoring SNMP, pembuatan payload NETCONF, serta pengolahan telemetry performa CPU perangkat.
