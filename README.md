@@ -18,6 +18,7 @@ Proyek ini merupakan sistem otomatisasi dan pemantauan jaringan modular berbasis
 │
 ├── .gitignore         # Daftar file/folder yang diabaikan oleh Git
 └── README.md          # Dokumentasi proyek
+```
 
 ## Cara Menjalankan Program
 
