@@ -4,7 +4,7 @@ Proyek ini merupakan sistem otomatisasi dan pemantauan jaringan modular berbasis
 
 ---
 
-## Struktur Folder & File Proyek
+## A. Struktur Folder & File Proyek
 
 ```text
 055_DevonFalenPasae_UTS_JKL/
@@ -20,7 +20,7 @@ Proyek ini merupakan sistem otomatisasi dan pemantauan jaringan modular berbasis
 └── README.md          # Dokumentasi proyek
 ```
 
-## Cara Menjalankan Program
+## B. Cara Menjalankan Program
 
 1. Pastikan Python versi 3.x dan lingkungan virtual (virtual environment) sudah aktif serta pustaka yang dibutuhkan telah terinstal:
 ```python
@@ -37,7 +37,7 @@ python main.py
 ```
 
 
-## Fitur dan Modul
+## C. Fitur dan Modul
 ```plaintext
 a. Modul SSH (ssh_modul.py): Mengelola koneksi remote berbasis Paramiko lengkap dengan exception handling untuk menangani timeout atau gagal otentikasi.
 
