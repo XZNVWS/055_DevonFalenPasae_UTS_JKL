@@ -36,7 +36,8 @@ pip install paramiko pysnmp
 python main.py
 ```
 
-3. Fitur Utama & Modul
+
+## Fitur dan Modul
 a. Modul SSH (ssh_modul.py): Mengelola koneksi remote berbasis Paramiko lengkap dengan exception handling untuk menangani timeout atau gagal otentikasi.
 
 b. Modul SNMP (snmp_modul.py): Melakukan query OID standar (sysName) untuk pemantauan nama perangkat secara otomatis.
